@@ -1,16 +1,34 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Entries" %>
 
 <h1>Entries</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Meal Type</th>
+      <th>Calories</th>
+      <th>Protein</th>
+      <th>Carbohydrates</th>
+      <th>Fats</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<div id="entries">
-  <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
-  <% end %>
-</div>
+  <tbody>
+  <div id="entries">
+    <% @entries.each do |entry| %>
+      <tr>
+      <td> <%= entry.meal_type %></td>
+      <td> <%= entry.calories %></td>
+      <td> <%= entry.proteins %></td>
+      <td> <%= entry.carbohydrates %></td>
+      <td> <%= entry.fats %></td>
+      <td> <%= link_to 'Show', entry %></td>
+      <td> <%= link_to 'Edit', edit_entry_path(entry) %></td>
+      </tr>
+    <% end %>
+  </div>
+  </tbody>
+</table>
 
+<br>
 <%= link_to "New entry", new_entry_path %>

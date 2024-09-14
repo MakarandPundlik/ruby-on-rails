@@ -12,5 +12,5 @@ class CreateEntries < ActiveRecord::Migration[7.2]
   end
 end
 
-#add default values at this level only 
-#t.integer :retweets_count, :default => 0
+# add default values at this level only 
+# t.integer :retweets_count, :default => 0
